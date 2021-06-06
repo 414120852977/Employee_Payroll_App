@@ -106,3 +106,50 @@ window.addEventListener('DOMContentLoaded', (event) => {
     salary.addEventListener('input', function() {
         output.textContent = salary.value;
     });
+    //save function called on submit
+const save = () => {
+    try{
+        let employeePayrollData = createEmployeePayroll();
+    }catch (e) {
+        return;
+    }
+}
+//function to populate employee object with html form data
+const createEmployeePayroll = () => {
+    let employeePayrollData = new EmployeePayrollData();
+    try{
+        employeePayrollData.name = getInputValuesById('#name');
+    }catch(e){
+        setTextValue('.test-error', e);
+        throw e;
+    }
+    employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop();
+    employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
+    employeePayrollData.department = getSelectedValues('[name=department]');
+    employeePayrollData.salary = getInputValuesById('#salary');
+    employeePayrollData.note = getInputValuesById('#notes');
+    let date = getInputValuesById('#day') + " "+getInputValuesById('#month')+ " " + getInputValuesById('#year');
+    employeePayrollData.date=Date.parse(date);
+    alert("employeePayrollData.toString()");
+    return employeePayrollData;
+}
+//function to get html form values of radio buttons
+const getSelectedValues = (propertyValue) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    let selItems = [];
+    allItems.forEach(item => {
+        if(item.checked)
+            selItems.push(item.value);
+    });
+    return selItems;
+}
+//function to get form values by Id
+const getInputValuesById = (id) => {
+    let value = document.querySelector(id).value;
+    return value;
+}
+//function to get form values
+const getInputElementValue = (id) => {
+    let value = document.getElementById(id).value;
+    return value;
+}
