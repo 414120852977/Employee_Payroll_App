@@ -1,6 +1,15 @@
 window.addEventListener('DOMContentLoaded', () => {
+    employeePayrollList = getEmployeePayrollDataFromLocalStorage();
+    document.querySelector('.emp-count').textContent = employeePayrollList.length;
     createInnerHTML();
+    localStorage.removeItem('editEmp');
 });
+//get Employee Data from local storage
+const getEmployeePayrollDataFromLocalStorage = () => {
+    return localStorage.getItem('EmployeePayrollList') ?
+                        JSON.parse(localStorage.getItem('EmployeePayrollList')) : [] ;
+}
+
 
 //Template literal ES6 feature 
 const createInnerHTML = () => {
