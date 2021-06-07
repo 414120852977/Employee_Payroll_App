@@ -1,4 +1,4 @@
 let site_properties = {
-    home_page : "../pages/home.html",
-    add_employee_payroll_page :"../pages/PayrollForm.js"
+    home_page : "C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\home.html",
+   add_employee_payroll_page :"C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\employeePayrollLogo.html"
 } 
