@@ -1,4 +1,7 @@
-window.addEventListener('DOMContentLoaded', () => {
+
+//declare global variable for employee payroll list
+let employeePayrollList; 
+window.addEventListener('DOMContentLoaded', (event) => {
     employeePayrollList = getEmployeePayrollDataFromLocalStorage();
     document.querySelector('.emp-count').textContent = employeePayrollList.length;
     createInnerHTML();
@@ -15,31 +18,32 @@ const getEmployeePayrollDataFromLocalStorage = () => {
 const createInnerHTML = () => {
     const headerHtml = "<th></th><th>Name</th><th>Gender</th><th>Department</th>"+
                        "<th>Salary</th><th>start Date</th><th>Actions</th>";
+    if (employeePayrollList.length == 0) return;
     let innerHtml = `${headerHtml}`;
-    let employeePayrollList = createEmployeePayrollJSON();
 
     for  ( const employeePayrollData of employeePayrollList){
         innerHtml = `${innerHtml}
          <tr>
              <td>
-                 <img class="profile" alt="" src="${employeePayrollData._profilePic}">
+                 <img class="profile" alt="" src="${employeePayrollData._profilePic}" alt="">
              </td>
              <td>${employeePayrollData._name}</td>
              <td>${employeePayrollData._gender}</td>
              <td>${getDeptHtml(employeePayrollData._department)}</td>
              <td>${employeePayrollData._salary}</td>
              <td>${employeePayrollData._startDate}</td>
+             
              <td> 
-                <img id="${employeePayrollData._id}" onclick ="remove(this)" alt="delete" src="../assets/icons/delete-black-18dp.svg">
-                 <img id="${employeePayrollData._id}" alt="Edit" onclick="update(this)" src="../assets/icons/create-black-18dp.svg">
+                <img id="${employeePayrollData._id}" onclick ="remove(this)" src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\svgimage\create-black-18dp.svg"  alt="delete" >
+                 <img id="${employeePayrollData._id}" onclick="update(this)" src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\svgimage\delete-black-18dp.svg" alt="Edit"  >
              </td>
+             
          </tr>
-         `;
+        `;
     }
      document.querySelector('#table-display').innerHTML=innerHtml;
 }
 
-//populate all department from department list
 const getDeptHtml = (deptList) => {
     let deptHtml = '';
     for (const dept of deptList){
@@ -48,36 +52,7 @@ const getDeptHtml = (deptList) => {
     return deptHtml;
 }
 
-//create Employee Payroll JSON objects
-const createEmployeePayrollJSON = () => {
-    let employeePayrollList = [
-        {
-            _name : 'Ashok Mane',
-            _gender : 'Male',
-            _department : ['Engineering' ,
-                           'HR'],
-            _salary : '4000000',
-            _startDate : '12 Oct 2019',
-            _note : '',
-            _id : new Date().getTime(),
-            _profilePic : 'C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\male.jfif'
-        },
-        {
-            _name : 'vaibhav wankhede',
-            _gender : 'Male',
-            _department : ['HR' ,
-                           'Finance'],
-            _salary : '3500000',
-            _startDate : '14 Nov 2019',
-            _note : '',
-            _id : new Date().getTime() + 1,
-            _profilePic : 'C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\male.jfif'
-        }
-    ];
-    return employeePayrollList;
-}
 
-/ remove employee details from payroll list
 const remove = (node)=> {
     let employeePayrollData = employeePayrollList.find(empData=>empData._id == node.id);
     if (!employeePayrollData) return;
@@ -90,7 +65,7 @@ const remove = (node)=> {
     createInnerHTML();
 } 
 
-//update employee details 
+
 const update = (node) => {
     let employeePayrollData = employeePayrollList.find(empData=>empData._id == node.id);
     if (!employeePayrollData) return;

@@ -7,63 +7,41 @@
     <link rel="stylesheet" href="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\home.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap"rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <title>Employee Payroll App</title>
   
-    <title>Document</title>
+    
 </head>
 <body>
     <!-- UC14-->
     <!-- Employee Payroll App Home Page -->
     <header class="header-content header">
         <div class="logo-content">
-            <img src="../assets/images/logo.png" alt="">
+            <img src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\payroll.png" alt="">
             <div>
                 <span class="emp-text">EMPLOYEE</span><br>
                 <span class="emp-text emp-payroll">PAYROLL</span>
             </div>
         </div>
     </header>
-    <!-- Employee Payroll Form With Header and Name -->
-     <div class="main-content">
-        <div class="header-content">
-            <div class="emp-detail-text">
-                Employee Details <div class="emp-count">10</div>
-            </div>
-            <a href="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\employeePayrollLogo.html" class="add-button">
-            <img src="../assets/icons/add-24px.svg" alt="">Add User</a>
-        </div><!-- Display Employee Details in Tabular Format -->
-        <div class="table-main">
-            <table id="display" class="table">
-                <tr>
-                    <th></th>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Department</th>
-                    <th>Salary</th>
-                    <th>startDate</th>
-                    <th>Actions</th>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../assets/profile-images/Ellipse -5.png" alt="" class="profile">
-                    </td>
-                    <td>Ashok Mane</td>
-                    <td>Male</td>
-                    <td>
-                        <div class="dept-label">HR</div>
-                        <div class="dept-label">Finance</div>
-                    </td>
-                    <td>4000000</td>
-                    <td>5 jully 2020</td>
-                    <td>
-                        <img id="1" onclick="remove(this)" src="../assets/icons/delete-black-18dp.svg" alt="delete">
-                        <img id="1" onclick="update(this)" src="../assets/icons/create-black-18dp.svg" alt="edit">
-                    </td>
-                    </tr>
-                </tr>
-            </table>
-        </div>
-
-    </div>
+    <div class="main-content"> <!--main-content-->
+            <div class="header-content">
+                <div class="emp-detail-text">
+                    Employee Details <div class="emp-count">10</div>
+                </div>
+                <a href="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\employeePayrollLogo.html" class="add-button">
+                    <img src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\add-24px.svg" alt="">Add User
+                </a>
+            </div><!--header-content-->
+            <div class="table-main">
+                <table id="table-display" class="table">
+                
+                </table>
+            </div><!--table-main-->
+        </div><!--main-content-->
+       <script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\home.js"></script>
+        <script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\site_properties.js"></script>
+        <script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\employeepayrolldata.js"></script>
+        <script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\utility.js"></script>
 </body>
 </html> 

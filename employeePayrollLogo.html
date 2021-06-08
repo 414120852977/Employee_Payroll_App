@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet"> 
 <link rel = "icon" href = 
 "C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\Payroll.ng" 
         type = "image/x-icon">
@@ -149,9 +153,9 @@ name="name" placeholder="your name.." required>
                 <textarea id="notes" class="input" name="notes" placeholder="" style="height:100px"></textarea>
             </div>
             <div class="buttonParent">      <!--Adding button-->
-              <button type="cancel" class ="cancelButton">Cancel</button>
+             <a href="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\home.html" class="resetButton button cancelButton">Cancel</a>
                 <div class="submit-reset">
-                    <button type="submit" class="button submitButton" id="submitButton">Submit</button>
+                    <button type="submit" class="button submitButton" id="submitButton" onsubmit=>Submit</button>
                     <button type="reset" class="resetButton button">Reset</button>
                 </div>
             </div>
@@ -159,18 +163,11 @@ name="name" placeholder="your name.." required>
 
 </form>
 </div>
-<div id="formId" class="form-content">
-            <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
-            <!-- UC2 -->
-            <div class="form-head">Employee Payroll Form</div>
-            <div class = "row-content">
-            <label class="label text" for="name">Name</label>
-            <input class="input" type="text" id="name" name="name"
-            placeholder="ypur name.." required>
-            <error-output class="text-error" for="text"></error-output>
-            </div>
-            </form>
-            </div>
+
 <script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\employeepayrollapp.js"></script>  
+<script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\employeepayrolldata.js"></script>
+<script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\home.js"></script>
+<script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\utility.js"></script>
+<script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\site_properties.js"></script>
 </body>
 </html>
