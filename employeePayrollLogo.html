@@ -9,9 +9,14 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet"> 
 <link rel = "icon" href = 
-"C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\Payroll.ng" 
+"C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\Payroll.png" 
         type = "image/x-icon">
          <link rel="stylesheet" href ="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\employeepayrollapp.css">
+         <script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\employeepayrolldata.js"></script>
+<script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\utility.js"></script>
+<script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\site_properties.js"></script>
+<script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\employeepayrollapp.js"></script>  
+
 <title>Employee Payroll Form </title>
 </head>
 <body>
@@ -25,32 +30,36 @@
 </div>
 </header>
 <div class="form-content">
-<form class="form" action="#" onsubmit="save();return false">
-<div class="row-content">
-<label class="label text" for="name">Name</label>
-<input class="input" type="text" id="name" 
-name="name" placeholder="your name.." required>
-</div>
+            <form class="form" action="#" onreset="resetForm()"  onsubmit="save();return false">
+                <div class="form-head">
+                    EMPLOYEE PAYROLL FORM
+                </div>
+                <div class="row-content">
+                    <label class="label text" for="name">Name</label>
+                    <input class="input" type="text" id="name" name="name" placeholder="Your name.." required>
+                    <error-output class="text-error" for="text"></error-output>
+                </div> 
+                <!-- uc3 -->
  <div class="row-content">
                 <label class="label text" for="profile">Profile image</label>
                 <div class="profile-radio-content">
                     <label>     
-                        <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse-1.png">
+                        <input type="radio" id="profile1" name="profile" value="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\male.JFIF">
                         <img class="profile" id='image1' src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\male.JFIF">
                     </label>
 
                     <label>
-                        <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse-2">
+                        <input type="radio" id="profile1" name="profile" value="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\female.JFIF">
                         <img class="profile" id='image1' src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\female.JFIF">
                     </label>
 
                     <label>
-                        <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse-3">
+                        <input type="radio" id="profile1" name="profile" value="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\transparent.jpg">
                         <img class="profile" id='image1' src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\transparent.jpg">
                     </label>
 
                     <label>
-                        <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse-4">
+                        <input type="radio" id="profile1" name="profile" value="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\download.JFIF">
                         <img class="profile" id='image1' src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\download.JFIF">
                     </label>
                 </div>   
@@ -139,12 +148,14 @@ name="name" placeholder="your name.." required>
                         <option value="Dec">December</option>
                     </select>
                     <select id="year" name="Year">      <!--Adding start year-->
+                        <option value="2021">2021</option>
                         <option value="2020">2020</option>
                         <option value="2019">2019</option>
                         <option value="2018">2018</option>
                         <option value="2017">2017</option>
                         <option value="2016">2016</option>
                     </select>
+                    <error-output class="date-error" for="text"></dateError-output>
                 </div>
             </div>
             <!--UC6 Ability to add Notes and Button-->
@@ -155,19 +166,12 @@ name="name" placeholder="your name.." required>
             <div class="buttonParent">      <!--Adding button-->
              <a href="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\home.html" class="resetButton button cancelButton">Cancel</a>
                 <div class="submit-reset">
-                    <button type="submit" class="button submitButton" id="submitButton" onsubmit=>Submit</button>
-                    <button type="reset" class="resetButton button">Reset</button>
+                    <button type="submit" class="button submitButton" id="submitButton" >Submit</button>
+                    <button type="reset" class="resetButton button" >Reset</button>
                 </div>
             </div>
-            
-
-</form>
+    </form>
 </div>
 
-<script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\employeepayrollapp.js"></script>  
-<script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\employeepayrolldata.js"></script>
-<script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\home.js"></script>
-<script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\utility.js"></script>
-<script src="C:\Users\ashok\Downloads\javascriptProgramming\Employee_PayRoll_App\site_properties.js"></script>
 </body>
 </html>

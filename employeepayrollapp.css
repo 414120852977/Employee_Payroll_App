@@ -34,6 +34,7 @@ body {
 
 }
 * { box-sizing: border-box;}
+/* UC2 */
 .form-content {
     min-height: calc(100%-80px);
     background-color: lightwhite;
@@ -70,7 +71,7 @@ body {
 .label {
     min-width: 140px;
 
-
+}
 label {
     padding : 12px 12px 12px 0;
     display: inline-block;
@@ -88,7 +89,7 @@ label {
     border-radius : 4px;
     resize: vertical;
 }
-
+/* uc3 */
 .profile-radio-content{
     display: flex;
     flex-direction: row;
